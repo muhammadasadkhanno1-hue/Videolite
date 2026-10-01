@@ -1,0 +1,2487 @@
+/* =========================================================
+   VIDEOLITE.COM
+   ULTRA PREMIUM VIDEO CONVERTER UI
+   HTML + JS COMPATIBLE
+   NO IDs / CLASSES CHANGED
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --blue: #2563eb;
+    --blue2: #3b82f6;
+
+    --cyan: #06b6d4;
+    --purple: #7c3aed;
+    --violet: #8b5cf6;
+
+    --pink: #ec4899;
+    --orange: #f97316;
+
+    --green: #10b981;
+
+    --dark: #111827;
+    --dark2: #1e293b;
+
+    --text: #334155;
+    --muted: #64748b;
+
+    --white: #ffffff;
+
+    --border: rgba(148,163,184,0.20);
+
+    --gradient:
+        linear-gradient(
+            120deg,
+            #2563eb,
+            #06b6d4,
+            #7c3aed,
+            #ec4899,
+            #f97316,
+            #2563eb
+        );
+
+    --gradient2:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed,
+            #ec4899
+        );
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(37,99,235,0.12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(236,72,153,0.11),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(6,182,212,0.10),
+            transparent 30%
+        ),
+
+        #f8fbff;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes liveGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 25% 100%;
+    }
+
+    40% {
+        background-position: 100% 75%;
+    }
+
+    60% {
+        background-position: 75% 0%;
+    }
+
+    80% {
+        background-position: 25% 25%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes shine {
+
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 120%;
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+
+    height: 78px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+
+        rgba(255,255,255,0.78);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    border-bottom:
+        1px solid rgba(148,163,184,0.18);
+
+    box-shadow:
+        0 5px 30px rgba(15,23,42,0.04);
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    position: relative;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    color: var(--dark);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+.logo:hover {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+.logo span {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    list-style: none;
+
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    color: #475569;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition: 0.3s ease;
+
+}
+
+
+.nav-links a::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -3px;
+
+    width: 0;
+
+    height: 3px;
+
+    border-radius: 50px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    transition: 0.35s ease;
+
+}
+
+
+.nav-links a:hover {
+
+    color: var(--blue);
+
+}
+
+
+.nav-links a:hover::before {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.nav-btn {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,0.20);
+
+    transition: 0.3s ease;
+
+}
+
+
+.nav-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.45),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+}
+
+
+.nav-btn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 18px 40px rgba(124,58,237,0.25);
+
+}
+
+
+.nav-btn:hover::before {
+
+    animation:
+        shine 0.8s ease;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        90px 20px 70px;
+
+    overflow: hidden;
+
+}
+
+
+/* Decorative circles */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    left: -220px;
+
+    top: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,0.18),
+            transparent 68%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        float 7s ease-in-out infinite;
+
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -220px;
+
+    bottom: -240px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(236,72,153,0.16),
+            transparent 68%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        float 8s ease-in-out infinite;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+
+    animation:
+        fadeUp 0.8s ease;
+
+}
+
+
+/* =========================================================
+   HERO BADGE
+========================================================= */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        10px 18px;
+
+    margin-bottom: 26px;
+
+    border-radius: 50px;
+
+    color: var(--purple);
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    background:
+        rgba(255,255,255,0.88);
+
+    border:
+        1px solid rgba(124,58,237,0.18);
+
+    box-shadow:
+        0 12px 35px rgba(124,58,237,0.09);
+
+    animation:
+        float 4s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(48px, 7vw, 84px);
+
+    line-height:
+        0.98;
+
+    font-weight: 800;
+
+    letter-spacing: -4px;
+
+    color:
+        #101827;
+
+    margin-bottom: 26px;
+
+}
+
+
+.hero h1 span {
+
+    display: inline-block;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        0.82em;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero p {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CONVERTER
+========================================================= */
+
+.converter-section {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================================
+   CONVERTER CARD
+========================================================= */
+
+.converter-card {
+
+    position: relative;
+
+    padding: 36px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.90);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid rgba(255,255,255,0.95);
+
+    box-shadow:
+        0 35px 90px rgba(15,23,42,0.11);
+
+    overflow: hidden;
+
+}
+
+
+.converter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 4s ease infinite;
+
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 32px;
+
+}
+
+
+.section-title h2 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color:
+        var(--dark);
+
+    margin-bottom: 8px;
+
+}
+
+
+.section-title p {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+========================================================= */
+
+.upload-box {
+
+    position: relative;
+
+    min-height: 270px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border:
+        2px dashed rgba(37,99,235,0.28);
+
+    border-radius: 24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,0.035),
+            rgba(124,58,237,0.025),
+            rgba(236,72,153,0.035)
+        );
+
+    cursor: pointer;
+
+    transition:
+        0.35s ease;
+
+}
+
+
+.upload-box:hover,
+.upload-box.dragover {
+
+    border-color:
+        var(--purple);
+
+    transform:
+        translateY(-5px);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,0.07),
+            rgba(124,58,237,0.06),
+            rgba(236,72,153,0.07)
+        );
+
+    box-shadow:
+        0 25px 60px rgba(124,58,237,0.12);
+
+}
+
+
+/* =========================================================
+   UPLOAD ICON
+========================================================= */
+
+.upload-icon {
+
+    width: 82px;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 25px;
+
+    font-size: 36px;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite,
+        float 4s ease-in-out infinite;
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,0.22);
+
+}
+
+
+/* =========================================================
+   UPLOAD TEXT
+========================================================= */
+
+.upload-box h3 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    color:
+        var(--dark);
+
+    margin-bottom: 7px;
+
+}
+
+
+.upload-box p {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   UPLOAD BUTTON
+========================================================= */
+
+.upload-button {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        13px 26px;
+
+    border-radius: 13px;
+
+    color:
+        white;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    box-shadow:
+        0 14px 35px rgba(37,99,235,0.20);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.upload-button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 45px rgba(124,58,237,0.25);
+
+}
+
+
+#videoInput {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   FILE INFORMATION
+========================================================= */
+
+.file-info {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 19px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(248,251,255,0.95);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,0.05);
+
+}
+
+
+.file-info.active {
+
+    display: block;
+
+    animation:
+        fadeUp 0.4s ease;
+
+}
+
+
+.file-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+
+.file-name {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-weight: 700;
+
+    color:
+        var(--dark);
+
+    word-break: break-all;
+
+}
+
+
+.file-size {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color:
+        var(--blue);
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   REMOVE FILE
+========================================================= */
+
+.remove-file {
+
+    border: none;
+
+    padding:
+        9px 14px;
+
+    border-radius: 10px;
+
+    color:
+        #dc2626;
+
+    background:
+        rgba(239,68,68,0.08);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.remove-file:hover {
+
+    color:
+        white;
+
+    background:
+        #ef4444;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   QUALITY SECTION
+========================================================= */
+
+.quality-section {
+
+    margin-top: 32px;
+
+}
+
+
+.quality-section h3 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    color:
+        var(--dark);
+
+    margin-bottom: 16px;
+
+}
+
+
+/* =========================================================
+   QUALITY GRID
+========================================================= */
+
+.quality-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 13px;
+
+}
+
+
+.quality-option input {
+
+    display: none;
+
+}
+
+
+.quality-option label {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: block;
+
+    padding:
+        19px 10px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(148,163,184,0.22);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    cursor: pointer;
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.quality-option label::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -100%;
+
+    top: 0;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+}
+
+
+.quality-option label:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(124,58,237,0.45);
+
+    box-shadow:
+        0 15px 35px rgba(124,58,237,0.10);
+
+}
+
+
+.quality-option label:hover::before {
+
+    animation:
+        shine 0.8s ease;
+
+}
+
+
+.quality-option input:checked + label {
+
+    color:
+        white;
+
+    border-color:
+        transparent;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    box-shadow:
+        0 18px 40px rgba(124,58,237,0.22);
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+.quality-main {
+
+    display: block;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.quality-desc {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.quality-option input:checked + label
+.quality-desc {
+
+    color:
+        rgba(255,255,255,0.88);
+
+}
+
+
+/* =========================================================
+   CONVERT BUTTON
+========================================================= */
+
+.convert-area {
+
+    margin-top: 31px;
+
+}
+
+
+.convert-button {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    height: 62px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    color:
+        white;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    box-shadow:
+        0 20px 45px rgba(37,99,235,0.20);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.convert-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.45),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+}
+
+
+.convert-button:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 28px 60px rgba(124,58,237,0.27);
+
+}
+
+
+.convert-button:hover::before {
+
+    animation:
+        shine 0.9s ease;
+
+}
+
+
+.convert-button:active {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.convert-button:disabled {
+
+    opacity:
+        0.45;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-card {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 24px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(248,251,255,0.95);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.progress-card.active {
+
+    display: block;
+
+    animation:
+        fadeUp 0.4s ease;
+
+}
+
+
+.progress-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+
+}
+
+
+.progress-status {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--muted);
+
+    font-weight: 600;
+
+}
+
+
+.progress-percent {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-weight: 800;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 14px;
+
+    overflow: hidden;
+
+    border-radius: 50px;
+
+    background:
+        #e8eef7;
+
+}
+
+
+.progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 50px;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 4s ease infinite;
+
+    transition:
+        width 0.4s ease;
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-card {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16,185,129,0.08),
+            rgba(6,182,212,0.07)
+        );
+
+    border:
+        1px solid rgba(16,185,129,0.20);
+
+}
+
+
+.result-card.active {
+
+    display: block;
+
+    animation:
+        fadeUp 0.5s ease;
+
+}
+
+
+.success-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 12px;
+
+    animation:
+        float 3s ease-in-out infinite;
+
+}
+
+
+.result-card h3 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    color:
+        #047857;
+
+    margin-bottom: 8px;
+
+}
+
+
+.result-card p {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--muted);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+.download-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        14px 28px;
+
+    border-radius: 12px;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            120deg,
+            #10b981,
+            #06b6d4
+        );
+
+    text-decoration:
+        none;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 15px 35px rgba(16,185,129,0.20);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.download-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 22px 45px rgba(16,185,129,0.28);
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+
+    max-width: 1100px;
+
+    margin:
+        95px auto;
+
+    padding:
+        0 20px;
+
+}
+
+
+.features-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        38px;
+
+}
+
+
+.features-title h2 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        35px;
+
+    font-weight:
+        900;
+
+    color:
+        var(--dark);
+
+}
+
+
+.features-title h2 span {
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/* =========================================================
+   FEATURES GRID
+========================================================= */
+
+.features-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.feature-card {
+
+    position:
+        relative;
+
+    min-height:
+        215px;
+
+    padding:
+        28px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,0.88);
+
+    border:
+        1px solid rgba(148,163,184,0.20);
+
+    box-shadow:
+        0 18px 45px rgba(15,23,42,0.06);
+
+    overflow:
+        hidden;
+
+    transition:
+        0.35s ease;
+
+}
+
+
+.feature-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        4px;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-9px);
+
+    box-shadow:
+        0 28px 65px rgba(37,99,235,0.12);
+
+}
+
+
+.feature-icon {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        17px;
+
+    font-size:
+        26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,0.10),
+            rgba(236,72,153,0.10)
+        );
+
+}
+
+
+.feature-card h3 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        18px;
+
+    font-weight:
+        700;
+
+    color:
+        var(--dark);
+
+    margin-bottom:
+        9px;
+
+}
+
+
+.feature-card p {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+#about h2 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-weight:
+        900;
+
+    color:
+        var(--dark);
+
+}
+
+
+#about h2 span {
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+#about p {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    margin-top:
+        50px;
+
+    padding:
+        38px 20px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    border-top:
+        1px solid rgba(148,163,184,0.18);
+
+    color:
+        var(--muted);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+}
+
+
+footer strong {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    background:
+        var(--gradient);
+
+    background-size:
+        500% 500%;
+
+    animation:
+        liveGradient 5s ease infinite;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        9px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #edf2f7;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    border-radius:
+        50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2563eb,
+            #7c3aed,
+            #ec4899
+        );
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ec4899,
+            #f97316,
+            #06b6d4
+        );
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    color:
+        white;
+
+    background:
+        #7c3aed;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+
+        padding:
+            0 4%;
+
+    }
+
+
+    .nav-links {
+
+        gap:
+            18px;
+
+    }
+
+
+    .quality-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .features-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .converter-card {
+
+        padding:
+            26px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+
+        height:
+            70px;
+
+    }
+
+
+    .nav-links {
+
+        display:
+            none;
+
+    }
+
+
+    .logo {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .nav-btn {
+
+        padding:
+            10px 14px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            440px;
+
+        padding:
+            70px 18px 50px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            46px;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .hero h1 span {
+
+        font-size:
+            0.82em;
+
+        letter-spacing:
+            -1px;
+
+    }
+
+
+    .hero p {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .converter-section {
+
+        padding:
+            12px;
+
+    }
+
+
+    .converter-card {
+
+        padding:
+            20px;
+
+        border-radius:
+            23px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size:
+            28px;
+
+    }
+
+
+    .upload-box {
+
+        min-height:
+            220px;
+
+        padding:
+            20px;
+
+    }
+
+
+    .quality-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:
+            10px;
+
+    }
+
+
+    .quality-option label {
+
+        padding:
+            16px 6px;
+
+    }
+
+
+    .quality-main {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .quality-desc {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .features {
+
+        margin:
+            65px auto;
+
+    }
+
+
+    .features-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .file-row {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .remove-file {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .hero h1 span {
+
+        font-size:
+            0.80em;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .convert-button {
+
+        height:
+            56px;
+
+        font-size:
+            15px;
+
+    }
+
+
+    .upload-icon {
+
+        width:
+            70px;
+
+        height:
+            70px;
+
+    }
+
+}

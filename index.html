@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Videolite.com - Free Video Converter</title>
+
+    <meta name="description"
+          content="Videolite.com - Free video converter from 4K to 144p. Reduce video resolution and file size easily.">
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        Video<span>lite</span>.com
+
+    </div>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#converter">
+                    Converter
+                </a>
+            </li>
+
+            <li>
+                <a href="#features">
+                    Features
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <button
+        type="button"
+        class="nav-btn"
+        id="navConvertButton">
+
+        Convert Video
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+
+        <div class="badge">
+
+            ⚡ 100% FREE VIDEO CONVERTER
+
+        </div>
+
+
+        <h1>
+
+            Convert Videos
+
+            <br>
+
+            <span>
+                Without Limits
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Convert your videos to
+            <strong>4K, 2K, 1080p, 720p,
+            480p, 360p, 240p or 144p.</strong>
+
+            Lower resolution can reduce
+            the final video file size.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                type="button"
+                class="hero-btn"
+                id="heroConvertButton">
+
+                🎬 Start Converting
+
+            </button>
+
+            <a
+                href="#features"
+                class="hero-secondary-btn">
+
+                Explore Features
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONVERTER SECTION
+===================================================== -->
+
+<section
+    class="converter-section"
+    id="converter">
+
+
+    <div class="converter-card">
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <div class="section-title">
+
+            <div class="section-badge">
+
+                VIDEO CONVERTER
+
+            </div>
+
+
+            <h2>
+
+                Convert Your Video
+
+            </h2>
+
+
+            <p>
+
+                Upload your video,
+                choose quality and convert.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             UPLOAD BOX
+        ================================================== -->
+
+        <div
+            class="upload-box"
+            id="uploadBox">
+
+
+            <div class="upload-icon">
+
+                🎬
+
+            </div>
+
+
+            <h3>
+
+                Drop your video here
+
+            </h3>
+
+
+            <p>
+
+                Drag & drop your video
+                or choose a file
+
+            </p>
+
+
+            <label
+                class="upload-button"
+                for="videoInput">
+
+                📁 Choose Video
+
+            </label>
+
+
+            <input
+                type="file"
+                id="videoInput"
+                accept="video/*">
+
+
+            <div class="upload-formats">
+
+                MP4 • MKV • MOV • AVI • WEBM
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FILE INFORMATION
+        ================================================== -->
+
+        <div
+            class="file-info"
+            id="fileInfo">
+
+
+            <div class="file-row">
+
+
+                <div class="file-details">
+
+
+                    <div class="file-icon">
+
+                        🎞️
+
+                    </div>
+
+
+                    <div>
+
+                        <div
+                            class="file-name"
+                            id="fileName">
+
+                            Video.mp4
+
+                        </div>
+
+
+                        <small>
+
+                            Original video
+
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <div
+                    class="file-size"
+                    id="fileSize">
+
+                    0 MB
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="remove-file"
+                    id="removeFile">
+
+                    ✕ Remove
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUALITY
+        ================================================== -->
+
+        <div class="quality-section">
+
+
+            <div class="quality-heading">
+
+                <div>
+
+                    <h3>
+
+                        Select Video Quality
+
+                    </h3>
+
+                    <p>
+
+                        Choose the output resolution
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="quality-selected"
+                    id="selectedQualityText">
+
+                    1080p
+
+                </div>
+
+            </div>
+
+
+
+            <div class="quality-grid">
+
+
+                <!-- 4K -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality4k"
+                        value="2160">
+
+                    <label for="quality4k">
+
+                        <span class="quality-main">
+
+                            4K
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            2160p • Ultra HD
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 2K -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality2k"
+                        value="1440">
+
+                    <label for="quality2k">
+
+                        <span class="quality-main">
+
+                            2K
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            1440p • QHD
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 1080P -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality1080"
+                        value="1080"
+                        checked>
+
+                    <label for="quality1080">
+
+                        <span class="quality-main">
+
+                            1080p
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            Full HD
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 720P -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality720"
+                        value="720">
+
+                    <label for="quality720">
+
+                        <span class="quality-main">
+
+                            720p
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            HD
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 480P -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality480"
+                        value="480">
+
+                    <label for="quality480">
+
+                        <span class="quality-main">
+
+                            480p
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            SD
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 360P -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality360"
+                        value="360">
+
+                    <label for="quality360">
+
+                        <span class="quality-main">
+
+                            360p
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            Low
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 240P -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality240"
+                        value="240">
+
+                    <label for="quality240">
+
+                        <span class="quality-main">
+
+                            240p
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            Very Low
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 144P -->
+
+                <div class="quality-option">
+
+                    <input
+                        type="radio"
+                        name="quality"
+                        id="quality144"
+                        value="144">
+
+                    <label for="quality144">
+
+                        <span class="quality-main">
+
+                            144p
+
+                        </span>
+
+                        <span class="quality-desc">
+
+                            Smallest Size
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONVERT BUTTON
+        ================================================== -->
+
+        <div class="convert-area">
+
+
+            <button
+                type="button"
+                class="convert-button"
+                id="convertButton"
+                disabled>
+
+                🚀 Convert Video
+
+            </button>
+
+
+            <p class="convert-note">
+
+                🔒 Your video is processed by your
+                Videolite backend.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROGRESS
+        ================================================== -->
+
+        <div
+            class="progress-card"
+            id="progressCard">
+
+
+            <div class="progress-top">
+
+
+                <div class="progress-status-area">
+
+                    <span
+                        class="progress-spinner"
+                        id="progressSpinner">
+
+                        ⚙️
+
+                    </span>
+
+
+                    <span
+                        class="progress-status"
+                        id="progressStatus">
+
+                        Preparing video...
+
+                    </span>
+
+                </div>
+
+
+                <span
+                    class="progress-percent"
+                    id="progressPercent">
+
+                    0%
+
+                </span>
+
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-info">
+
+                <span>
+
+                    FFmpeg Video Processing
+
+                </span>
+
+                <span>
+
+                    Please wait...
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <div
+            class="error-card"
+            id="errorCard">
+
+
+            <div class="error-icon">
+
+                ⚠️
+
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    Conversion Error
+
+                </h3>
+
+
+                <p
+                    id="errorText">
+
+                    Something went wrong.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <div
+            class="result-card"
+            id="resultCard">
+
+
+            <div class="success-icon">
+
+                ✅
+
+            </div>
+
+
+            <h3>
+
+                Video Converted Successfully!
+
+            </h3>
+
+
+            <p id="resultText">
+
+                Your video is ready.
+
+            </p>
+
+
+            <div class="result-stats">
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Original
+                    </span>
+
+                    <strong id="originalSize">
+
+                        --
+
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Converted
+                    </span>
+
+                    <strong id="convertedSize">
+
+                        --
+
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Saved
+                    </span>
+
+                    <strong id="savedPercent">
+
+                        --
+
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="#"
+                class="download-button"
+                id="downloadButton"
+                download>
+
+                ⬇ Download Video
+
+            </a>
+
+
+            <button
+                type="button"
+                class="convert-again-button"
+                id="convertAgainButton">
+
+                🔄 Convert Another Video
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section
+    class="features"
+    id="features">
+
+
+    <div class="features-title">
+
+
+        <div class="section-badge">
+
+            WHY VIDEOLITE
+
+        </div>
+
+
+        <h2>
+
+            Powerful & Simple
+
+        </h2>
+
+
+        <p>
+
+            Everything you need to convert videos.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="features-grid">
+
+
+        <!-- FEATURE 1 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                🆓
+
+            </div>
+
+
+            <h3>
+
+                Completely Free
+
+            </h3>
+
+
+            <p>
+
+                Convert your videos without
+                paying for every conversion.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 2 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                📉
+
+            </div>
+
+
+            <h3>
+
+                Smaller File Size
+
+            </h3>
+
+
+            <p>
+
+                Lower resolution and optimized
+                compression can reduce the output size.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 3 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                ⚡
+
+            </div>
+
+
+            <h3>
+
+                FFmpeg Powered
+
+            </h3>
+
+
+            <p>
+
+                Powerful FFmpeg technology
+                handles the actual video conversion.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 4 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                🎥
+
+            </div>
+
+
+            <h3>
+
+                8 Quality Options
+
+            </h3>
+
+
+            <p>
+
+                Choose from 4K, 2K, 1080p,
+                720p, 480p, 360p, 240p and 144p.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 5 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                🔒
+
+            </div>
+
+
+            <h3>
+
+                Local Processing
+
+            </h3>
+
+
+            <p>
+
+                Your local backend can process
+                your videos directly on your computer.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 6 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                📱
+
+            </div>
+
+
+            <h3>
+
+                Mobile Friendly
+
+            </h3>
+
+
+            <p>
+
+                Responsive interface works on
+                phones, tablets and computers.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="about-section">
+
+
+    <div class="section-badge">
+
+        ABOUT VIDEOLITE
+
+    </div>
+
+
+    <h2>
+
+        About <span>Videolite</span>
+
+    </h2>
+
+
+    <p>
+
+        Videolite.com is a free video conversion
+        platform designed to make video resizing
+        and compression simple.
+
+        Upload your video, select the desired
+        quality and let FFmpeg create the output.
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        Video<span>lite</span>.com
+
+    </div>
+
+
+    <p>
+
+        © 2026 Videolite.com
+        — Free Video Converter
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+<!-- =====================================================
+     SMALL NAVIGATION SCRIPT
+===================================================== -->
+
+<script>
+
+    const navConvertButton =
+        document.getElementById(
+            "navConvertButton"
+        );
+
+
+    const heroConvertButton =
+        document.getElementById(
+            "heroConvertButton"
+        );
+
+
+    const converterSection =
+        document.getElementById(
+            "converter"
+        );
+
+
+    if (navConvertButton) {
+
+        navConvertButton.addEventListener(
+            "click",
+            function () {
+
+                converterSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+
+    if (heroConvertButton) {
+
+        heroConvertButton.addEventListener(
+            "click",
+            function () {
+
+                converterSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
